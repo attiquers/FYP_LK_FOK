@@ -1,0 +1,119 @@
+models/
+
+# =========================================
+# Python
+# =========================================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.py.class
+*.egg
+*.egg-info/
+.eggs/
+*.manifest
+*.spec
+
+# Virtual environments
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled / optimized
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+*.log
+logs/
+*.out
+*.err
+
+# =========================================
+# LiveKit / Agents
+# =========================================
+# LiveKit session artifacts
+*.wav
+*.pcm
+*.opus
+*.mp3
+*.ogg
+*.flac
+
+# TTS / transcripts
+*.jsonl
+*.srt
+*.vtt
+
+# Temporary audio/debug
+audio_output/
+tts_cache/
+checkpoints/
+
+# =========================================
+# Data / Notebooks
+# =========================================
+.ipynb_checkpoints/
+*.ipynb~
+
+# Datasets / cache
+data/
+*.csv
+*.tsv
+*.xlsx
+
+# HuggingFace / model cache
+~/.cache/
+~/.huggingface/
+*.ckpt
+*.pt
+*.bin
+*.safetensors
+
+# =========================================
+# IDE / Editor
+# =========================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm / JetBrains
+.idea/
+*.iml
+
+# Others
+.DS_Store
+Thumbs.db
+
+# =========================================
+# Docker
+# =========================================
+# Build artifacts
+*.pid
+*.seed
+*.bak
+
+# Docker files
+docker-compose.override.yml
+.docker/
+.dockerignore
+
+# =========================================
+# Misc
+# =========================================
+# Environment variables
+.env.local
+.env.*.local
+
+# Backup files
+*~
+*.swp
+*.swo
+*.tmp
+*.bak
