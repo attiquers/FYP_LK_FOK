@@ -50,7 +50,7 @@ class KokoroTTS(tts.TTS):
     
     def __init__(
         self,
-        base_url: str = "http://localhost:8000",
+        base_url: str = "http://localhost:8880/v1",
         api_key: str = "sk-kokoro",
         model: TTSModels | str = "tts-1",
         voice: TTSVoices | str = "af_heart",
@@ -221,6 +221,5 @@ class KokoroTTSStream(tts.ChunkedStream):
             )
         except Exception as e:
             raise APIConnectionError() from e
-
 
 

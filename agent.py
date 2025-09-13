@@ -7,7 +7,7 @@ from livekit.plugins.turn_detector.english import EnglishModel
 
 # Custom TTS & STT
 from tts import KokoroTTS
-from stt import CT2WhisperSTT
+from stt import WhisperSTT
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
 
@@ -17,7 +17,15 @@ class MyAssistant(Agent):
 
 async def entrypoint(ctx: JobContext):
     # Initialize STT and TTS
-    stt_impl = CT2WhisperSTT()
+    
+    stt_impl=WhisperSTT(
+        model="jkawamoto/whisper-tiny-ct2",
+        language="en",
+        device="cpu",
+        compute_type="float",
+        # warmup_audio="./sample_audio.wav",  # 5-10 for warmup
+    )
+
     tts_impl = KokoroTTS(
         base_url="http://localhost:8880/v1",
         api_key="NULL",
@@ -27,8 +35,8 @@ async def entrypoint(ctx: JobContext):
 
     # LLM
     llm_impl = openai.LLM.with_ollama(
-        model="gemma2:1b",
-        base_url="http://localhost:11434/"
+        model="gemma3:1b",
+        base_url="http://localhost:11434/v1"
     )
 
     # VAD + turn detection
